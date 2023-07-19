@@ -1,4 +1,3 @@
-
 $(function () {
   // Listener for click events on the save button
   $(".saveBtn").on("click", function () {
@@ -10,6 +9,7 @@ $(function () {
     
     // Save the user input in local storage using the hour ID as the key
     localStorage.setItem(hourId, userInput);
+    showSuccessAlert();
   });
 
   // Apply past, present, or future class to each time block
@@ -52,7 +52,6 @@ $(function () {
     }, 60000);
   
   });
-  
 
   // Retrieve user input from local storage and apply to textarea
   $(".time-block").each(function () {
@@ -64,7 +63,32 @@ $(function () {
     }
   });
 
+
   // Display the current date in the header
   var currentDate = dayjs().format("MMMM D, YYYY");
   $("#currentDay").text(currentDate);
 });
+
+  // Function to show success alert
+  function showSuccessAlert() {
+    // Create the alert element
+    var alertElement = $("<div>", {
+      class: "alert alert-success alert-dismissible fade show",
+      role: "alert",
+      text: "Input Saved Successfully",
+    });
+
+    // Create the close button
+    var closeButton = $("<button>", {
+      type: "button",
+      class: "btn-close",
+      "data-bs-dismiss": "alert",
+      "aria-label": "Close",
+    });
+
+    // Append the close button to the alert element
+    alertElement.append(closeButton);
+
+    // Insert the alert element into the DOM (before the header)
+    $(".container-lg").prepend(alertElement);
+  }
