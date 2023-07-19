@@ -14,11 +14,13 @@
 ## Usage 
 
     - The site should look something like the image below: 
-    ![website image](./images/calendar.JPG)
+
+![website image](./images/calendar.JPG)
 
 ## Credits
 
     - I used MDN docs, and the Bootstrap documentation heavily for this project. 
-    [Bootstrap Alerts](https://getbootstrap.com/docs/4.0/components/alerts/)
 
-    
+[Bootstrap Alerts](https://getbootstrap.com/docs/4.0/components/alerts/)
+
+[DayJS Documentation](https://day.js.org/docs/en/parse/string-format)
